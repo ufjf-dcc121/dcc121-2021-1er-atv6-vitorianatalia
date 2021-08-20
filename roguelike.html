@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roguelike</title>
     <style>
-        table {
-            border-collapse: collapse;
-        }
+      table {
+        border-collapse: collapse;
+      }
       td {
         height: 30px;
         width: 30px;
@@ -36,8 +36,8 @@
     </style>
   </head>
   <body>
-      <h1>Roguelike</h1>
-      <p> Vitória Natália Caetano - 201935030</p>
+    <h1>Roguelike</h1>
+    <p>Vitória Natália Caetano - 201935030</p>
     <table>
       <tbody>
         <tr>
@@ -483,34 +483,33 @@
       </tbody>
     </table>
     <script>
-      const celulas = document.querySelectorAll('td');
+      const celulas = document.querySelectorAll("td");
 
-      for(let i = 0; i < celulas.length -1; i++) {
+      for (let i = 0; i < celulas.length - 1; i++) {
         const e = celulas[i];
-        e.addEventListener('click', onClick);
-        if (e.classList.length == 0)
-          e.classList.add('wall'); 
+        e.addEventListener("click", onClick);
+        if (e.classList.length == 0) e.classList.add("wall");
       }
-      
+
       function onClick(evt) {
         let target = evt.target;
         console.log(target.classList.value);
-        if (target.classList.value == 'wall') {
-          target.classList.remove('wall');
+        if (target.classList.value == "wall") {
+          target.classList.remove("wall");
           console.log(target.classList.value);
-        } else if (target.classList.value== '') {
-          target.classList.add('orc');
-          target.innerHTML = "O"; 
+        } else if (target.classList.value == "") {
+          target.classList.add("orc");
+          if (target.innerHTML != "@") target.innerHTML = "O";
           console.log(target.classList.value);
-        } else if (target.classList.value == 'orc') {
-          target.classList.remove('orc');
-          target.innerHTML = "D"; 
-          target.classList.add('treasure');
+        } else if (target.classList.value == "orc") {
+          target.classList.remove("orc");
+          if (target.innerHTML != "@") target.innerHTML = "D";
+          target.classList.add("treasure");
           console.log(target.classList.value);
-        } else if (target.classList.value == 'treasure') {
-          target.classList.remove('treasure');
-          target.innerHTML = ""; 
-          target.classList.add('wall');
+        } else if (target.classList.value == "treasure") {
+          target.classList.remove("treasure");
+          if (target.innerHTML != "@") target.innerHTML = "";
+          target.classList.add("wall");
           console.log(target.classList.value);
         }
       }
