@@ -483,7 +483,12 @@
       </tbody>
     </table>
     <script>
-      
+      const celulas = document.querySelectorAll('td');
+      for(let i = 0; i < celulas.length -1; i++) {
+        const e = celulas[i];
+        if (e.classList.length == 0)
+          e.classList.add('wall'); 
+      }
     </script>
   </body>
 </html>
