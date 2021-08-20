@@ -500,13 +500,16 @@
           console.log(target.classList.value);
         } else if (target.classList.value== '') {
           target.classList.add('orc');
+          target.innerHTML = "O"; 
           console.log(target.classList.value);
         } else if (target.classList.value == 'orc') {
           target.classList.remove('orc');
+          target.innerHTML = "D"; 
           target.classList.add('treasure');
           console.log(target.classList.value);
         } else if (target.classList.value == 'treasure') {
           target.classList.remove('treasure');
+          target.innerHTML = ""; 
           target.classList.add('wall');
           console.log(target.classList.value);
         }
