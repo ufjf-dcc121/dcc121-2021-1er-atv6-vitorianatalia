@@ -484,10 +484,32 @@
     </table>
     <script>
       const celulas = document.querySelectorAll('td');
+
       for(let i = 0; i < celulas.length -1; i++) {
         const e = celulas[i];
+        e.addEventListener('click', onClick);
         if (e.classList.length == 0)
           e.classList.add('wall'); 
+      }
+      
+      function onClick(evt) {
+        let target = evt.target;
+        console.log(target.classList.value);
+        if (target.classList.value == 'wall') {
+          target.classList.remove('wall');
+          console.log(target.classList.value);
+        } else if (target.classList.value== '') {
+          target.classList.add('orc');
+          console.log(target.classList.value);
+        } else if (target.classList.value == 'orc') {
+          target.classList.remove('orc');
+          target.classList.add('treasure');
+          console.log(target.classList.value);
+        } else if (target.classList.value == 'treasure') {
+          target.classList.remove('treasure');
+          target.classList.add('wall');
+          console.log(target.classList.value);
+        }
       }
     </script>
   </body>
